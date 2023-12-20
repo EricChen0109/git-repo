@@ -13,6 +13,7 @@
         <p>目前空氣品質:<span id="air-quality">N/A</span></p>
         <button id="update-button">更新數值</button>
     </div>
+
     <script>
         const airQualityElement = document.getElementById("air-quality");
         const updateButton = document.getElementById("update-button");
@@ -24,7 +25,7 @@
                 .then(response => response.json())
                 .then(data => {
 
-                    const airQualityValue = data.record[0].concentration;
+                    const airQualityValue = data.records[0].concentration;
                     console.log(data);
                     airQualityElement.textContent = airQualityValue;
                 })
